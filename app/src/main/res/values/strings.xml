@@ -17,4 +17,6 @@
         <item>Random cute cat</item>
         <item>Random cat saying hello</item>
     </string-array>
+    <string name="cat_amp_cie"><![CDATA[Cat&Cie]]></string>
+    <string name="image_of_cat">Image of cat</string>
 </resources>
