@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CatAsAService</string>
+    <string name="cat_amp_cie"><![CDATA[Cat&Cie]]></string>
+    <string name="image_of_cat">Image of cat</string>
 </resources>
