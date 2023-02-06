@@ -45,7 +45,6 @@
         app:srcCompat="@drawable/cat1"
         tools:ignore="MissingConstraints" />
 
-<<<<<<< HEAD
     <ScrollView
         android:layout_width="305dp"
         android:layout_height="85dp"
@@ -67,7 +66,6 @@
                 android:text="TextView" />
         </LinearLayout>
     </ScrollView>
-=======
     <Button
         android:id="@+id/buttonIdAPI"
         android:layout_width="122dp"
@@ -88,7 +86,6 @@
         tools:layout_editor_absoluteX="266dp"
         tools:layout_editor_absoluteY="723dp"
         android:contentDescription="@string/todo" />
->>>>>>> d8a63bb1f4cf031263942ea046a2a1d1378ae357
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
