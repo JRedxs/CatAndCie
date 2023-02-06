@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
         setUpMenu()
     }
 
-
     fun setUpMenu(){
         val menu: Spinner = findViewById(R.id.spinner_menu)
         // Create an ArrayAdapter using the string array and a default spinner layout
