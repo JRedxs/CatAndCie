@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var isBooting: Boolean = true
     var menuState: AppState = AppState.Type
     var image: String = ""
-    var cate: String = ""
+    var cat: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +50,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         }
         when(menuState){
             AppState.Type -> selectType(parent.selectedItem.toString())
-            AppState.Image -> ""
-            AppState.Cat -> ""
+            AppState.Image -> selectImage(parent.selectedItem.toString())
+            AppState.Cat -> selectCat(parent.selectedItem.toString())
         }
     }
 
@@ -76,17 +76,31 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         else {
             throw Exception("WTF ! It's a type that does not exist !")
         }
-        setUpMenu()
+        updateText()
     }
     fun selectImage(text: String){
         image = text
         menuState= AppState.Type
 
-        setUpMenu()
+        updateText()
     }
+    fun selectCat(text: String){
+        cat = text
+        menuState= AppState.Type
+
+        updateText()
+    }
+
+    fun updateText()
+    {
+        isBooting = true
+        setUpMenu()
+        setUpButton()
+    }
+
     fun setUpButton(){
         val bouton: Button = findViewById(R.id.buttonIdAPI)
-        
+
     }
 
 }
