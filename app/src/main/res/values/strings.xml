@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">CatAsAService</string>
+    <string-array name="Menu_array">
+        <item>Type of Picture</item>
+        <item>Type of Cat</item>
+    </string-array>
+    <string-array name="cat_type_array">
+        <item>Cute</item>
+        <item>Black</item>
+        <item>White</item>
+        <item>Tabby</item>
+        <item>Crazy</item>
+    </string-array>
+    <string-array name="picture_type_array">
+        <item>Random cat</item>
+        <item>Random gif</item>
+        <item>Random cute cat</item>
+        <item>Random cat saying hello</item>
+    </string-array>
+    <string name="cat_amp_cie"><![CDATA[Cat&Cie]]></string>
+    <string name="image_of_cat">Image of cat</string>
 </resources>
