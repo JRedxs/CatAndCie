@@ -1,3 +1,5 @@
+package com.example.catasaservice
+
 import java.security.cert.X509Certificate
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
@@ -13,8 +15,7 @@ class OkHttpClient {
                 override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) {}
                 override fun getAcceptedIssuers(): Array<X509Certificate> = arrayOf()
             })
-
-            // Installation du gestionnaire de confiance dans un contexte SSL
+            // Installation du gestionnaire de confiance dans un context SSL
             val sslContext = SSLContext.getInstance("SSL")
             sslContext.init(null, trustAllCerts, java.security.SecureRandom())
 
