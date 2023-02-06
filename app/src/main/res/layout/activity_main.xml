@@ -46,6 +46,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:id="@+id/buttonIdAPI"
         android:layout_width="122dp"
         android:layout_height="55dp"
         android:text="@string/find_your_cat"
