@@ -33,6 +33,7 @@
         app:layout_constraintVertical_bias="0.186" />
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="405dp"
         android:layout_height="384dp"
         android:contentDescription="@string/image_of_cat"
@@ -43,6 +44,26 @@
         app:layout_constraintVertical_bias="0.498"
         app:srcCompat="@drawable/cat1"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="122dp"
+        android:layout_height="55dp"
+        android:text="@string/find_your_cat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.914" />
+
+    <ImageView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        tools:ignore="MissingConstraints"
+        app:srcCompat="@drawable/loupe"
+        tools:layout_editor_absoluteX="266dp"
+        tools:layout_editor_absoluteY="723dp"
+        android:contentDescription="@string/todo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
