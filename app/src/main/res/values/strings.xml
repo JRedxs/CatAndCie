@@ -19,4 +19,6 @@
     </string-array>
     <string name="cat_amp_cie"><![CDATA[Cat&Cie]]></string>
     <string name="image_of_cat">Image of cat</string>
+    <string name="find_your_cat">Find your cat</string>
+    <string name="todo">TODO</string>
 </resources>
