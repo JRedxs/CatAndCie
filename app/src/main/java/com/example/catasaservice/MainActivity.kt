@@ -3,13 +3,14 @@ package com.example.catasaservice
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
-    var menuState: String = ""
+    var isBooting: Boolean = true
+    var menuState: AppState = AppState.Type
+    var image: String = ""
+    var cate: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,11 +18,17 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     private fun setUpMenu(){
-        val menu: Spinner = findViewById(R.id.spinner_menu)
+        val menu: NDSpinner = findViewById(R.id.spinner_menu)
         // Create an ArrayAdapter using the string array and a default spinner layout
+
+        val stringArray = when(menuState){
+            AppState.Type -> R.array.Menu_array
+            AppState.Image -> R.array.picture_type_array
+            AppState.Cat -> R.array.cat_type_array
+        }
         ArrayAdapter.createFromResource(
             this,
-            R.array.Menu_array,
+            stringArray,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
@@ -36,12 +43,50 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         // An item was selected. You can retrieve the selected item using
         // parent.getItemAtPosition(pos)
         val console: TextView = findViewById(R.id.Console_textView)
-        console.setText(parent.selectedItem.toString())
+        console.setText(menuState.toString())
+        if (isBooting){
+            isBooting = false
+            return
+        }
+        when(menuState){
+            AppState.Type -> selectType(parent.selectedItem.toString())
+            AppState.Image -> ""
+            AppState.Cat -> ""
+        }
     }
 
     override fun onNothingSelected(parent: AdapterView<*>) {
         // Another interface callback
         // Do Nothing
+
+    }
+    enum class AppState {
+        Type, Image, Cat
+    }
+    fun selectType(text: String){
+        val types: Array<String> = resources.getStringArray(R.array.Menu_array)
+        if (text == types[0])
+        {
+            menuState= AppState.Image
+        }
+        else if (text == types[1])
+        {
+            menuState= AppState.Cat
+        }
+        else {
+            throw Exception("WTF ! It's a type that does not exist !")
+        }
+        setUpMenu()
+    }
+    fun selectImage(text: String){
+        image = text
+        menuState= AppState.Type
+
+        setUpMenu()
+    }
+    fun setUpButton(){
+        val bouton: Button = findViewById(R.id.buttonIdAPI)
+        
     }
 
 }

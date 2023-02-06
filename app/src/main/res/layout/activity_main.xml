@@ -22,7 +22,7 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="32dp" />
 
-    <Spinner
+    <com.example.catasaservice.NDSpinner
         android:id="@+id/spinner_menu"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
